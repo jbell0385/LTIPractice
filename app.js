@@ -1,11 +1,23 @@
+require('dotenv').config();
 var createError = require('http-errors');
 var express = require('express');
 var path = require('path');
 var cookieParser = require('cookie-parser');
 var logger = require('morgan');
+var mongoose    = require("mongoose");
+var bodyParser  = require("body-parser");
 
 var indexRouter = require('./routes/index');
 var usersRouter = require('./routes/users');
+
+
+mongoose.connect(`mongodb+srv://jbell0385:${process.env.MONGO_PASS}@cluster0-l1is4.gcp.mongodb.net/test?retryWrites=true`, (err)=>{
+  if(err){
+    console.log(err);
+  }else{
+    console.log('Mongo Connected');
+  }
+});
 
 var app = express();
 
@@ -15,7 +27,7 @@ app.set('view engine', 'ejs');
 
 app.use(logger('dev'));
 app.use(express.json());
-app.use(express.urlencoded({ extended: false }));
+app.use(bodyParser.urlencoded({extended:true}));
 app.use(cookieParser());
 app.use(express.static(path.join(__dirname, 'public')));
 

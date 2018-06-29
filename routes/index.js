@@ -1,13 +1,14 @@
 var express = require('express');
 var router = express.Router();
+var middleware = require('../middleware/middleware');
 
 /* GET home page. */
 router.get('/', function(req, res, next) {
   res.render('index');
 });
 
-router.post('/', (req,res)=>{
-  res.send(req.body);
+router.post('/', middleware.checkNonce, (req,res)=>{
+  res.send(req.nonceVerified);
 })
 
 module.exports = router;
