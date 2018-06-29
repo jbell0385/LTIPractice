@@ -8,7 +8,7 @@ router.get('/', function(req, res, next) {
 });
 
 router.post('/', middleware.checkNonce, (req,res)=>{
-  res.send(req.body);
+  res.send(req.nonceVerified);
 })
 
 module.exports = router;
