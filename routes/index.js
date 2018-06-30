@@ -17,11 +17,8 @@ router.post('/', (req,res)=>{
   const provider = new lti.Provider(cKey, cSecret);
   provider.valid_request(req, (err, isValid)=>{
     if(err){console.log(err)};
-    console.log("req: ",req);
-    console.log("isValid: ",isValid);
+    res.send(isValid);
   });
-  console.log("provider: ",provider);
-  res.send(req.body);
 })
 
 module.exports = router;
