@@ -3,12 +3,19 @@ var router = express.Router();
 var middleware = require('../middleware/middleware');
 var lti = require('ims-lti');
 
+var cKey = "bbdf109cbc65fd11658b2a9c9d2fab9b";
+var cSecret = "1923358240917d4f82e7d0d2c3522195";
+
+
+
 /* GET home page. */
 router.get('/', function(req, res, next) {
   res.render('index');
 });
 
-router.post('/', middleware.checkNonce, (req,res)=>{
+router.post('/', (req,res)=>{
+  const provider = new lti.Provider(cKey, cSecret);
+  console.log(provider);
   res.send(req.body);
 })
 
