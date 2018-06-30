@@ -15,7 +15,7 @@ router.get('/', function(req, res, next) {
 });
 
 router.post('/', (req,res)=>{
-  let provider = new lti.Provider(cKey, cSecret);
+  let provider = new lti.Provider("bbdf109cbc65fd11658b2a9c9d2fab9b", "1923358240917d4f82e7d0d2c3522195");
   provider.valid_request(req, (err, isValid)=>{
     if(err){console.log(err)};
     res.send(isValid);
