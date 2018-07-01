@@ -15,8 +15,7 @@ router.get('/', function(req, res, next) {
 });
 
 router.post('/', (req,res)=>{
-  let provider = new lti.Provider("jeremysecret", "jeremysecret");
-  provider.ext_content.send_iframe(res, "https://lti-sandbox.herokuapp.com/", "my App", 800, 800) 
+  res.send("hello")
 })
 
 module.exports = router;
