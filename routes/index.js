@@ -15,15 +15,16 @@ router.get('/', function(req, res, next) {
 });
 
 router.post('/', (req,res)=>{
-  console.log("req.body----: ",req.body);
-  var provider = new lti.Provider(req.body, cSecret);
-  console.log("provider---: ",provider);
-  provider.valid_request(req, function(err, isValid) {
-    if(err){
-        console.log("LTI Error", err, isValid)
-    }
-    res.send(isValid);
-  });
+  // console.log("req.body----: ",req.body);
+  // var provider = new lti.Provider(req.body, cSecret);
+  // console.log("provider---: ",provider);
+  // provider.valid_request(req, function(err, isValid) {
+  //   if(err){
+  //       console.log("LTI Error", err, isValid)
+  //   }
+  //   res.send(isValid);
+  // });
+  res.send(req.body);
 })
 
 module.exports = router;
