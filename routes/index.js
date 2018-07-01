@@ -3,8 +3,8 @@ var router = express.Router();
 var middleware = require('../middleware/middleware');
 var lti = require('ims-lti');
 
-var cKey = "bbdf109cbc65fd11658b2a9c9d2fab9b";
-var cSecret = "1923358240917d4f82e7d0d2c3522195";
+var cKey = "jeremysecret";
+var cSecret = "jeremysecret";
 // var nonceStore = new lti.Stores.MemoryStore();
 // console.log("nonceStore: ",nonceStore);
 
@@ -15,7 +15,7 @@ router.get('/', function(req, res, next) {
 });
 
 router.post('/', (req,res)=>{
-  let provider = new lti.Provider("97718a47096aa89d545fb4f75f0fb064", "9c568c158c3c41b59809ab8a6cf58537");
+  let provider = new lti.Provider("jeremysecret", "jeremysecret");
   provider.valid_request(req, (err, isValid)=>{
     if(err){console.log(err)};
     res.send(isValid);
