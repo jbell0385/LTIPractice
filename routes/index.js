@@ -23,6 +23,7 @@ router.post('/', (req,res)=>{
       if(err){
           console.log("LTI Error", err, isValid)
       }
+      console.log(req);
       res.send(isValid);
     });
   }catch(err){
