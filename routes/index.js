@@ -23,13 +23,13 @@ router.post('/', (req,res)=>{
   var provider = new lti.Provider("codementorkey", "codementorsecret");
   //console.log(provider);
   provider.valid_request(req, val, function(err, isValid) {
-    console.log(val);
-    // console.log(provider);
+    console.log("VAL: ",val);
+    console.log("PROVIDER: ",provider);
     if(err){
         console.log("LTI Error", err, isValid)
     }
     //console.log(req.body);
-    res.send("Hello World2");
+    res.send("Hello World3");
   });
 
 })
