@@ -16,9 +16,8 @@ router.get('/', function(req, res, next) {
 router.post('/', (req,res)=>{
   var cKey = "codementorkey";
   var cSecret = "codementorsecret";
-  console.log("body: ", req.body);
+  console.log(req.body);
   var val = req.body;
-  console.log('VAL: ')
   console.log(val);
   //var nonce_store = "MemoryStore";
   var provider = new lti.Provider(val, cSecret);
@@ -28,7 +27,7 @@ router.post('/', (req,res)=>{
         console.log("LTI Error", err, isValid)
     }
     //console.log(req.body);
-    res.send(isValid);
+    res.send("Hello World");
   });
 
 })
