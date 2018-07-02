@@ -16,8 +16,9 @@ router.get('/', function(req, res, next) {
 router.post('/', (req,res)=>{
     var cKey = "72397a6f8e18b80da92784ab3a1d981c";
     var cSecret = "6320fba80cd8c0b53fbc53c3a14fe619";
+    var ltiBody = req.body;
     var provider = new lti.Provider(cKey, cSecret);;
-    provider.valid_request(req, function(err, isValid) {
+    provider.valid_request(req, ltiBody, function(err, isValid) {
       if(err){
           console.log("LTI Error", err, isValid)
       }
