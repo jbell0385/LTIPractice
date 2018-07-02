@@ -16,18 +16,19 @@ router.get('/', function(req, res, next) {
 router.post('/', (req,res)=>{
   var cKey = "codementorkey";
   var cSecret = "codementorsecret";
-  console.log(req.body);
+  // console.log(req.body);
   var val = req.body;
-  console.log(val);
+  // console.log(val);
   //var nonce_store = "MemoryStore";
   var provider = new lti.Provider(val, cSecret);
   //console.log(provider);
-  provider.valid_request(req, function(err, isValid) {
+  provider.valid_request(req, val, function(err, isValid) {
+    console.log(val);
     if(err){
         console.log("LTI Error", err, isValid)
     }
     //console.log(req.body);
-    res.send("Hello World");
+    res.send("Hello World2");
   });
 
 })
