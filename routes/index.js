@@ -16,7 +16,8 @@ router.get('/', function(req, res, next) {
 router.post('/', (req,res)=>{
   var cKey = "codementorkey";
   var cSecret = "codementorsecret";
-  var val = (req.body) ? req.body : req.user 
+  var val = (req.body) ? req.body : req.user;
+  console.log("------val: ",val)
   //var nonce_store = "MemoryStore";
   var provider = new lti.Provider(val, cSecret);
   console.log(provider);
