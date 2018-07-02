@@ -29,7 +29,7 @@ router.post('/', (req,res)=>{
         console.log("LTI Error", err, isValid)
     }
     //console.log(req.body);
-    res.send("Hello World3");
+    res.send(req.body);
   });
 
 })
