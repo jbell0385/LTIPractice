@@ -16,10 +16,11 @@ router.get('/', function(req, res, next) {
 router.post('/', (req,res)=>{
   var cKey = "codementorkey";
   var cSecret = "codementorsecret";
+  var reqBody = req.body;
   //var nonce_store = "MemoryStore";
   var provider = new lti.Provider(cKey, cSecret);
   console.log(provider);
-  provider.valid_request(req, function(err, isValid) {
+  provider.valid_request(req, reqBody, function(err, isValid) {
     if(err){
         console.log("LTI Error", err, isValid)
     }
