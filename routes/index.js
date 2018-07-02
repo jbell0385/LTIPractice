@@ -14,8 +14,8 @@ router.get('/', function(req, res, next) {
 });
 
 router.post('/', (req,res)=>{
-  var cKey = "96619f9a881aba6bda3d70f3e0eef6b3";
-  var cSecret = "108bcbd1b66458d36ce77dccd04bf601";
+  var cKey = "codementorkey";
+  var cSecret = "codementorsecret";
   //var nonce_store = "MemoryStore";
   var provider = new lti.Provider(cKey, cSecret);
   console.log(provider);
