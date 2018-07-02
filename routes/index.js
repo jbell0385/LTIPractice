@@ -14,14 +14,15 @@ router.get('/', function(req, res, next) {
 });
 
 router.post('/', (req,res)=>{
-  var cKey = "72397a6f8e18b80da92784ab3a1d981c";
-  var cSecret = "6320fba80cd8c0b53fbc53c3a14fe619";
+  var cKey = "9da5e474af4430ccbcf1e948e244717d";
+  var cSecret = "308e962f3eec52178395b48322a62d4a";
   var provider = new lti.Provider(cKey, cSecret);
   provider.valid_request(req, function(err, isValid) {
     if(err){
         console.log("LTI Error", err, isValid)
     }
-    res.send(isValid, req.body);
+    console.log(req.body);
+    res.send(isValid);
   });
 
 })
