@@ -3,8 +3,7 @@ var router = express.Router();
 var middleware = require('../middleware/middleware');
 var lti = require('ims-lti');
 
-var cKey = "72397a6f8e18b80da92784ab3a1d981c";
-var cSecret = "6320fba80cd8c0b53fbc53c3a14fe619";
+
 // var nonceStore = new lti.Stores.MemoryStore();
 // console.log("nonceStore: ",nonceStore);
 
