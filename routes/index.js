@@ -14,20 +14,15 @@ router.get('/', function(req, res, next) {
 });
 
 router.post('/', (req,res)=>{
-  var cKey = "codementorkey";
-  var cSecret = "codementorsecret";
-  // console.log(req.body);
+  var cKey = "7c2591554c0f0a0be6f1e76aa3d10c9a";
+  var cSecret = "c84ff8b56f981f23dbed5abd4b8793ce";
   var val = req.body;
-  // console.log(val);
-  var provider = new lti.Provider(val, cSecret);
-  //console.log(provider);
+  var provider = new lti.Provider(cKey, cSecret);
+  console.log("VAL: ",val);
   provider.valid_request(req, function(err, isValid) {
-    console.log("VAL: ",val);
-    console.log("PROVIDER: ",provider);
     if(err){
         console.log("LTI Error", err, isValid)
     }
-    //console.log(req.body);
     res.send(req.body);
   });
 
