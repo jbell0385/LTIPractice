@@ -19,9 +19,9 @@ router.post('/', (req,res)=>{
   // console.log(req.body);
   var val = req.body;
   // console.log(val);
-  var provider = new lti.Provider("codementorkey", "codementorsecret");
+  var provider = new lti.Provider(cKey, "codementorsecret");
   //console.log(provider);
-  provider.valid_request(req, val, function(err, isValid) {
+  provider.valid_request(req, function(err, isValid) {
     console.log("VAL: ",val);
     console.log("PROVIDER: ",provider);
     if(err){
