@@ -14,8 +14,8 @@ router.get('/', function(req, res, next) {
 });
 
 router.post('/', (req,res)=>{
-  var cKey = "codementorkey";
-  var cSecret = "codementorsecret";
+  var cKey = "b2bd83902abd2a21ac6b74500ec1e82e";
+  var cSecret = "632b44b905ad948e7336f7434294eb09";
   // console.log(req.body);
   var val = req.body;
   // console.log(val);
