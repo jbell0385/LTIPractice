@@ -20,7 +20,7 @@ mongoose.connect(`mongodb+srv://jbell0385:${process.env.MONGO_PASS}@cluster0-l1i
 });
 
 var app = express();
-
+app.enable('trust proxy');
 // view engine setup
 app.set('views', path.join(__dirname, 'views'));
 app.set('view engine', 'ejs');
