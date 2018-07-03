@@ -19,7 +19,6 @@ router.post('/', (req,res)=>{
   // console.log(req.body);
   var val = req.body;
   // console.log(val);
-  //var nonce_store = "MemoryStore";
   var provider = new lti.Provider("codementorkey", "codementorsecret");
   //console.log(provider);
   provider.valid_request(req, val, function(err, isValid) {
